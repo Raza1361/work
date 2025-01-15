@@ -8,31 +8,49 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="bg-dark text-white text-center py-4">
-        <h1>Contact Farah Misbah</h1>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="works.html">Works</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="bg-dark text-white">
+        <div class="container">
+            <h1 class="text-center py-3">Contact Farah Misbah</h1>
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Farah Misbah</a>
+                <button class="navbar-toggler" type="button" onclick="openNav()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <section class="container my-5">
+    <div id="mySideNavbar" class="side-navbar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+
+    <section class="interactive-section container text-center my-5">
         <h2>Get in Touch</h2>
         <p>If you would like to reach out to Farah Misbah for inquiries, collaborations, or any other reason, please feel free to contact her through the following:</p>
         <ul class="list-group">
-            <li class="list-group-item">Email: farah@example.com</li>
-            <li class="list-group-item">Facebook: Farah Misbah</li>
-            <li class="list-group-item">Instagram: @farahwrites</li>
+            <li class="list-group-item">
+                <a href="tel:+923012805588" target="_blank" class="text-decoration-none">Phone: 0301-2805588</a>
+            </li>
+            <li class="list-group-item">
+                <a href="https://www.facebook.com/farahmisbah" target="_blank" class="text-decoration-none">Facebook: Farah Misbah</a>
+            </li>
+            <li class="list-group-item">
+                <a href="https://www.instagram.com/farahmisbahofficial/" target="_blank" class="text-decoration-none">Instagram: @farahmisbahofficial</a>
+            </li>
         </ul>
     </section>
+    
 
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2025 Farah Misbah. All Rights Reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

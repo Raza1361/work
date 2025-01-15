@@ -8,19 +8,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="bg-dark text-white text-center py-4">
-        <h1>About Farah Misbah</h1>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="works.html">Works</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="bg-dark text-white">
+        <div class="container">
+            <h1 class="text-center py-3">About Farah Misbah</h1>
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Farah Misbah</a>
+                <button class="navbar-toggler" type="button" onclick="openNav()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <section class="container my-5">
+    <div id="mySideNavbar" class="side-navbar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <section class="interactive-section container text-center my-5">
         <h2>Who is Farah Misbah?</h2>
         <p>Farah Misbah is a contemporary author known for her evocative storytelling and deep, immersive narratives. Her writing explores themes of love, loss, identity, and the complexities of human emotions. With a passion for connecting with readers, she has built a loyal following of people who appreciate her unique voice.</p>
     </section>
@@ -32,8 +40,8 @@
                 <div class="card">
                     <img src="img.png1.jpeg" class="card-img-top" alt="Award Image 1">
                     <div class="card-body">
-                        <h5 class="card-title">Award Title 1</h5>
-                        <p class="card-text">A brief description of the award and the reason Farah Misbah received it.</p>
+                        <h5 class="card-title">Accheivments</h5>
+                        <p class="card-text">A Diffrent Moments.</p>
                     </div>
                 </div>
             </div>
@@ -41,8 +49,8 @@
                 <div class="card">
                     <img src="img.png2.jpeg" class="card-img-top" alt="Award Image 2">
                     <div class="card-body">
-                        <h5 class="card-title">Award Title 2</h5>
-                        <p class="card-text">A brief description of the award and the significance of the recognition.</p>
+                        <h5 class="card-title">Ronumai Kitab</h5>
+                        <p class="card-text">Award By Hareem Adab.</p>
                     </div>
                 </div>
             </div>
@@ -50,8 +58,8 @@
                 <div class="card">
                     <img src="img.png3.jpeg" class="card-img-top" alt="Award Image 3">
                     <div class="card-body">
-                        <h5 class="card-title">Award Title 3</h5>
-                        <p class="card-text">Details about this specific award and how it contributed to Farah's career growth.</p>
+                        <h5 class="card-title">Motivational Speaking</h5>
+                        <p class="card-text">By Ranganuh.</p>
                     </div>
                 </div>
             </div>
@@ -60,8 +68,8 @@
                 <div class="card">
                     <img src="img.png4.jpeg" class="card-img-top" alt="Award Image 4">
                     <div class="card-body">
-                        <h5 class="card-title">Award Title 4</h5>
-                        <p class="card-text">Details about this specific award and how it contributed to Farah's career growth.</p>
+                        <h5 class="card-title">Services For Martyrs</h5>
+                        <p class="card-text">By Shahuda Foundation.</p>
                     </div>
                 </div>
             </div>
@@ -70,8 +78,8 @@
                 <div class="card">
                     <img src="img.png5.jpeg" class="card-img-top" alt="Award Image 5">
                     <div class="card-body">
-                        <h5 class="card-title">Award Title 5</h5>
-                        <p class="card-text">Details about this specific award and how it contributed to Farah's career growth.</p>
+                        <h5 class="card-title">Army Haritage Islamabad</h5>
+                        <p class="card-text">By Army Haritage.</p>
                     </div>
                 </div>
             </div>
@@ -80,8 +88,48 @@
                 <div class="card">
                     <img src="img.png6.jpeg" class="card-img-top" alt="Award Image 6">
                     <div class="card-body">
-                        <h5 class="card-title">Award Title 6</h5>
-                        <p class="card-text">Details about this specific award and how it contributed to Farah's career growth.</p>
+                        <h5 class="card-title">Governer House</h5>
+                        <p class="card-text">A Deligation Of APS Martyrs Parents With Me At Governer House.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img.png7.jpeg" class="card-img-top" alt="Award Image 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Urdu Academy Sindh</h5>
+                        <p class="card-text">i Give A Session To Teachers By Urdu Academy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img.png8.jpeg" class="card-img-top" alt="Award Image 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Iqra Academy</h5>
+                        <p class="card-text">A Motivational Speach By Me At Iqra Academy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img.png10.jpeg" class="card-img-top" alt="Award Image 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Womens Club</h5>
+                        <p class="card-text">Super Women Award.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img.png11.jpeg" class="card-img-top" alt="Award Image 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Best Writer Award.</h5>
+                        <p class="card-text">By Ranganuh.</p>
                     </div>
                 </div>
             </div>
@@ -92,6 +140,7 @@
         <p>&copy; 2025 Farah Misbah. All Rights Reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
