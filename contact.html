@@ -10,7 +10,7 @@
 <body>
     <header class="bg-dark text-white">
         <div class="container">
-            <h1 class="text-center py-3">Contact Farah Misbah</h1>
+            <h1 id="dynamic-heading" class="text-center py-3"></h1>
             <nav class="navbar navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">Farah Misbah</a>
                 <button class="navbar-toggler" type="button" onclick="openNav()">
@@ -54,6 +54,35 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+        const text = "Farah Misbah - Contact";
+        let i = 0;
+
+        function typeHeading() {
+            if (i < text.length) {
+                document.getElementById("dynamic-heading").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeHeading, 100); 
+            } else {
+                setTimeout(() => {
+                    i = 0;
+                    document.getElementById("dynamic-heading").innerHTML = ""; 
+                    typeHeading(); 
+                }, 300);
+            }
+        }
+
+        window.onload = typeHeading;
+
+        function openNav() {
+            document.getElementById("mySideNavbar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySideNavbar").style.width = "0";
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
