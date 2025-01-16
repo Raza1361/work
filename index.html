@@ -10,7 +10,7 @@
 <body>
     <header class="bg-dark text-white">
         <div class="container">
-            <h1 id="dynamic-heading" class="text-center py-3"></h1>
+            <h1 class="text-center py-3">Welcome to the Official Website of Farah Misbah</h1>
             <nav class="navbar navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">Farah Misbah</a>
                 <button class="navbar-toggler" type="button" onclick="openNav()">
@@ -30,44 +30,13 @@
 
     <section class="interactive-section container text-center my-5">
         <h2>Discover the World of Farah Misbah</h2>
-        <p>Farah Misbah is the poet, Writer, motivational speaker, and Match Maker of the present era.
-            She is playing a big role in healing this shattered society through her writings and speeches.
-            She is also the author of the spectacular book "Dastan-e-Ishq-o-Safar."
-            In Pakistan's educational action plan, her articles have been included in the secondary book curriculum.</p>
+        <p>Farah Misbah is the poet, Writer, motivational speaker and Match Maker of the present era.
+            She is playing a big role in healing this shattered society By her writings and speeches.
+             she is also the author of spectular book of dastan e ishq o safar.
+            In Pakistan's educational action plan, her articles have been included in the secondary  book.</p>
     </section>
-    <br><br><br><br><br><br><br><br>
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Farah Misbah. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        const text = "Welcome to the Official Website of Farah Misbah";
-        let i = 0;
-
-        function typeHeading() {
-            if (i < text.length) {
-                document.getElementById("dynamic-heading").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeHeading, 100); 
-            } else {
-                setTimeout(() => {
-                    i = 0;
-                    document.getElementById("dynamic-heading").innerHTML = ""; 
-                    typeHeading(); 
-                }, 300);
-            }
-        }
-
-        window.onload = typeHeading;
-
-        function openNav() {
-            document.getElementById("mySideNavbar").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySideNavbar").style.width = "0";
-        }
-    </script>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <script src="script.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
