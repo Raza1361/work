@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farah Misbah - Author, Poet & Motivational Speaker</title>
+    <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon">>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #9e7d5a;
+            --secondary-color: #d6b161;
+            --dark-color: #2a1a15;
+            --light-color: #f9f6f2;
+            --accent-color: #c87f4c;
+            --overlay: rgba(42, 26, 21, 0.85);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(214, 177, 97, 0.2);
+            border-radius: 50%;
+            border-top: 5px solid var(--secondary-color);
+            animation: spin 1.2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(to bottom, rgba(42, 26, 21, 0.98), rgba(42, 26, 21, 0.92)) !important;
+            padding: 20px 0;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.shrink {
+            padding: 12px 0;
+        }
+        
+        .navbar-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 2.2rem;
+            color: var(--secondary-color) !important;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-link {
+            color: var(--light-color) !important;
+            font-weight: 500;
+            margin: 0 12px;
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 5px !important;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=1398&q=80') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d6b161' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease forwards 0.5s;
+        }
+        
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(200, 127, 76, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-primary:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(200, 127, 76, 0.4);
+        }
+        
+        .btn-primary:hover:before {
+            opacity: 1;
+        }
+        
+        /* Section Styles */
+        .section-title {
+            position: relative;
+            margin-bottom: 70px;
+            font-size: 3.2rem;
+            color: var(--dark-color);
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .section-padding {
+            padding: 120px 0;
+        }
+        
+        .bg-light {
+            background-color: var(--light-color) !important;
+        }
+        
+        .bg-white {
+            background-color: white !important;
+        }
+        
+        /* About Section */
+        .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-section:before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239e7d5a' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .about-img {
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            transform: perspective(1000px) rotateY(-5deg);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-img:hover {
+            transform: perspective(1000px) rotateY(5deg) scale(1.03);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-content h3:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        /* Works Section */
+        .works-section {
+            position: relative;
+        }
+        
+        .works-section:before {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d6b161' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .link-btn {
+            margin: 8px;
+            border-radius: 50px;
+            padding: 12px 25px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .link-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .link-btn:hover:before {
+            opacity: 1;
+        }
+        
+        .book-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            margin-bottom: 30px;
+            height: 100%;
+            position: relative;
+            transform: translateY(0);
+        }
+        
+        .book-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .book-card:hover:before {
+            opacity: 1;
+        }
+        
+        .book-img {
+            height: 320px;
+            object-fit: cover;
+            width: 100%;
+            transition: var(--transition);
+        }
+        
+        .book-card:hover .book-img {
+            transform: scale(1.05);
+        }
+        
+        .book-content {
+            padding: 25px;
+            position: relative;
+        }
+        
+        .book-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .book-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Gallery Styles */
+        .gallery-item {
+            margin-bottom: 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .gallery-caption h5 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .gallery-caption p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            opacity: 0.8;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section:before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 400px;
+            height: 400px;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239e7d5a' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .contact-info:hover .contact-icon {
+            transform: scale(1.1) translateY(-5px);
+            color: var(--accent-color);
+        }
+        
+        .contact-info h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .contact-info p {
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--dark-color), #1f120e);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d6b161' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        
+        .social-links {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .social-links a {
+            color: var(--light-color);
+            font-size: 1.8rem;
+            margin: 0 20px;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-8px) scale(1.2);
+        }
+        
+        /* Side Navigation */
+        .side-navbar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            right: 0;
+            background: linear-gradient(to bottom, var(--dark-color), #1f120e);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 100px;
+            box-shadow: -5px 0 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .side-navbar a {
+            padding: 18px 30px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: var(--light-color);
+            display: block;
+            transition: 0.3s;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .side-navbar a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(214, 177, 97, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .side-navbar a:hover:before {
+            left: 100%;
+        }
+        
+        .side-navbar a:hover {
+            color: var(--secondary-color);
+            background-color: rgba(255, 255, 255, 0.03);
+            padding-left: 40px;
+        }
+        
+        .side-navbar .closebtn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 40px;
+            margin-left: 50px;
+            border: none;
+            color: var(--secondary-color);
+            background: transparent;
+            transition: var(--transition);
+        }
+        
+        .side-navbar .closebtn:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+            
+            .section-padding {
+                padding: 80px 0;
+            }
+            
+            .link-btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .navbar-brand {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .btn-primary {
+                padding: 14px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Farah Misbah</a>
+                <button class="navbar-toggler" type="button" onclick="openNav()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#works">Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="mySideNavbar" class="side-navbar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#home" onclick="closeNav()">Home</a>
+            <a href="#about" onclick="closeNav()">About</a>
+            <a href="#works" onclick="closeNav()">Works</a>
+            <a href="#contact" onclick="closeNav()">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Farah Misbah</h1>
+            <p class="hero-subtitle">Author • Poet • Motivational Speaker • Match Maker</p>
+            <a href="#works" class="btn btn-primary">Explore Works</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding bg-white">
+        <div class="container">
+            <h2 class="section-title text-center">About Farah</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="./images/profile.png" alt="Farah Misbah" class="img-fluid about-img">
+                </div>
+                <div class="col-lg-6 about-content">
+                    <h3 class="mb-4">Healing Society Through Words</h3>
+                    <p>Farah Misbah is a renowned poet, writer, motivational speaker, and match maker of the present era. She plays a significant role in healing our society through her profound writings and inspirational speeches.</p>
+                    <p>As the author of the spectacular book "Dastan e Ishq o Safar," Farah has touched countless hearts and minds with her eloquent expression of human emotions and experiences.</p>
+                    <p>Her literary contributions have been recognized at the national level, with her articles being included in secondary school textbooks as part of Pakistan's educational action plan.</p>
+                    <p>Farah Misbah has had an illustrious career as a presenter and anchor from 2003 to 2024. She began her journey with Radio Pakistan, where she showcased her exceptional communication skills and ability to engage with diverse audiences. Over the years, she became a prominent figure in the industry, joining ARY QTV as a presenter, where she focused on religious and spiritual programs, earning widespread appreciation for her insightful content and engaging style. She further expanded her repertoire by working as an anchor on ARY City, demonstrating her versatility in covering a variety of topics and connecting with urban audiences. Farah's two-decade-long career reflects her dedication, professionalism, and the trust she has earned from esteemed platforms and her audience alike. She Is Working As A Writer And Motivational Speaker Right Now.</p>
+                </div>
+            </div>
+
+            <!-- Awards & Recognitions -->
+            <div class="mt-5 pt-5">
+                <h2 class="section-title text-center">Awards & Recognitions</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png1.jpeg" alt="Achievements" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Achievements</h5>
+                                <p>Different Moments</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png2.jpeg" alt="Ronumai Kitab" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Ronumai Kitab</h5>
+                                <p>Award By Hareem Adab</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png3.jpeg" alt="Motivational Speaking" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Motivational Speaking</h5>
+                                <p>By Rang E Nau</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png4.jpeg" alt="Services For Martyrs" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Services For Martyrs</h5>
+                                <p>By Shohuda Foundation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png5.jpeg" alt="Army Heritage Islamabad" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Army Heritage Islamabad</h5>
+                                <p>By Army Heritage</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png6.jpeg" alt="Governor House" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Governor House</h5>
+                                <p>A Delegation Of APS Martyrs Parents</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png7.jpeg" alt="Urdu Academy Sindh" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Urdu Academy Sindh</h5>
+                                <p>By Urdu Academy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png8.jpeg" alt="Iqra University" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Iqra University</h5>
+                                <p>Sovenier By Iqra University</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png9.jpeg" alt="Womens Club" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Womens Club</h5>
+                                <p>Super Women Award</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png10.jpeg" alt="Best Writer Award" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Best Writer Award</h5>
+                                <p>By Rang E Nau</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png11.jpeg" alt="ISPR Hilal" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>ISPR Hilal</h5>
+                                <p>Article</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png12.jpeg" alt="Khatm E Nabuwet" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Khatm E Nabuwet</h5>
+                                <p>At Academy London</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png15.jpeg" alt="قاسم علی شاہ کی طرف سے کتاب پر تبصرہ" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>قاسم علی شاہ کی طرف سے کتاب پر تبصرہ</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 fade-in">
+                        <div class="gallery-item">
+                            <img src="./images/img.png16.jpeg" alt="Award" class="gallery-img">
+                            <div class="gallery-caption">
+                                <h5>Award</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section id="works" class="works-section section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Literary Works</h2>
+            
+            <!-- Links -->
+            <div class="text-center mb-5 fade-in">
+                <h3 class="mb-4">Featured Links</h3>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <button onclick="window.open('https://jang.com.pk/news/1098599', '_blank')" class="btn btn-primary link-btn">Jang Article</button>
+                    <button onclick="window.open('https://m.facebook.com/story.php?story_fbid=7159829687390496&id=2392859717420874&sfnsn=scwspwa', '_blank')" class="btn btn-secondary link-btn">Facebook Story</button>
+                    <button onclick="window.open('https://www.jasarat.com/2023/04/15/230415-03-6/', '_blank')" class="btn btn-success link-btn">Jasarat Article</button>
+                    <button onclick="window.open('https://www.facebook.com/share/p/15F5QvF1UM/', '_blank')" class="btn btn-info link-btn">Facebook Link 1</button>
+                    <button onclick="window.open('https://www.facebook.com/share/p/18KthnQQyJ/', '_blank')" class="btn btn-warning link-btn">Facebook Link 2</button>
+                    <button onclick="window.open('https://www.facebook.com/110118030603309/videos/435454814211013/?mibextid=6AJuK9', '_blank')" class="btn btn-danger link-btn">Video Link</button>
+                    <button onclick="window.open('https://www.facebook.com/share/p/12Hny6nruJM/', '_blank')" class="btn btn-dark link-btn">Facebook Link 3</button>
+                    <button onclick="window.open('https://www.facebook.com/share/p/1DCEo9Uv86/', '_blank')" class="btn btn-light link-btn">Facebook Link 4</button>
+                    <button onclick="window.open('https://www.facebook.com/share/p/19tszf7BtY/', '_blank')" class="btn btn-secondary link-btn">Facebook Link 5</button>
+                </div>
+            </div>
+
+            <!-- Books Gallery -->
+            <div class="row">
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book1.png" alt="Books" class="book-img">
+                        <div class="book-content">
+                            <h4>Books Collection</h4>
+                            <p>Many Books You Can Read</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book2.png" alt="Dastan E Ishq E Safar" class="book-img">
+                        <div class="book-content">
+                            <h4>Dastan E Ishq E Safar</h4>
+                            <p>Written By Farah Misbah</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book3.png" alt="Risal E Atraf" class="book-img">
+                        <div class="book-content">
+                            <h4>Risal E Atraf</h4>
+                            <p>Picture by Farah Misbah</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book4.png" alt="Book Title" class="book-img">
+                        <div class="book-content">
+                            <h4>Book Title</h4>
+                            <p>Title On Main Page</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book5.png" alt="Naat E Rasool" class="book-img">
+                        <div class="book-content">
+                            <h4>Naat E Rasool</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book6.png" alt="Article" class="book-img">
+                        <div class="book-content">
+                            <h4>Article</h4>
+                            <p>A Ranumai Article</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book7.png" alt="Dastan E Ishq" class="book-img">
+                        <div class="book-content">
+                            <h4>Dastan E Ishq</h4>
+                            <p>Book Written By Farah Misbah</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book8.png" alt="At Liberty Books" class="book-img">
+                        <div class="book-content">
+                            <h4>At Liberty Books</h4>
+                            <p>You Also Known</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book9.png" alt="Article" class="book-img">
+                        <div class="book-content">
+                            <h4>Article</h4>
+                            <p>One More Article</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/img.png13.jpeg" alt="Review On The Book" class="book-img">
+                        <div class="book-content">
+                            <h4>Review On The Book</h4>
+                            <p>By Farah</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/img.png14.jpeg" alt="Presenting Book To Governor" class="book-img">
+                        <div class="book-content">
+                            <h4>Presenting Book To Governor</h4>
+                            <p>At Expo Center</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe 
+                                class="embed-responsive-item" 
+                                src="https://www.facebook.com/plugins/video.php?href=https://fb.watch/n0bKdxy-fg/?mibextid=NnVzG8" 
+                                frameborder="0" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="book-content">
+                            <h4>Video Content</h4>
+                            <p>Facebook Video</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe 
+                                class="embed-responsive-item" 
+                                src="https://www.youtube.com/embed/zj7ZeIfjquc" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="book-content">
+                            <h4>Video Content</h4>
+                            <p>YouTube Video</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book10.png" alt="Book" class="book-img">
+                        <div class="book-content">
+                            <h4>Book</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book11.png" alt="Book" class="book-img">
+                        <div class="book-content">
+                            <h4>Book</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book12.png" alt="Book" class="book-img">
+                        <div class="book-content">
+                            <h4>Book</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book13.png" alt="Book" class="book-img">
+                        <div class="book-content">
+                            <h4>Book</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book14.png" alt="Book" class="book-img">
+                        <div class="book-content">
+                            <h4>Book</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="book-card">
+                        <img src="./images/book15.png" alt="Book" class="book-img">
+                        <div class="book-content">
+                            <h4>Book</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding bg-white">
+        <div class="container">
+            <h2 class="section-title text-center">Get In Touch</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>Farahmisbahwrites@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <h4>Facebook</h4>
+                        <a href="https://www.facebook.com/farah.misbah.96?mibextid=ZbWKwL" target="_blank">Farah Misbah</a>
+                    </div>
+
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <p>+92 301 2805588</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 fade-in">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Location</h4>
+                        <p>Karachi, Pakistan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8 fade-in">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <div class="social-links">
+                <a href="https://www.facebook.com/farah.misbah.96?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2025 Farah Misbah. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+    <script>
+
+     $(document).ready(function () {
+        $('a[href^="#"]').on('click', function (e) {
+            e.preventDefault();
+            var target = this.hash;
+            if (target && $(target).length) {
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - 70
+                }, 800);
+            }
+        });
+    });
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(function() {
+                preloader.style.opacity = '0';
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        function openNav() {
+            document.getElementById("mySideNavbar").style.width = "300px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySideNavbar").style.width = "0";
+        }
+        
+        // Navbar background change on scroll
+        $(window).scroll(function() {
+            if($(window).scrollTop() > 50) {
+                $('.navbar').addClass('shrink');
+            } else {
+                $('.navbar').removeClass('shrink');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        $('a[href*="#"]').on('click', function(e) {
+            e.preventDefault();
+            
+            $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top - 70
+            }, 800, 'easeInOutCubic');
+        });
+        
+        // Fade in animation on scroll
+        function checkFade() {
+            $('.fade-in').each(function() {
+                var position = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                
+                if (scroll + windowHeight - 100 > position) {
+                    $(this).addClass('visible');
+                }
+            });
+        }
+        
+        checkFade();
+        $(window).scroll(checkFade);
+    </script>
+</body>
+</html>
